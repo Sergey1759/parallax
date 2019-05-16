@@ -1,3 +1,4 @@
+const layer_background = document.querySelector('#layer-background');
 const layer_1 = document.querySelector('#layer-1');
 const layer_2 = document.querySelector('#layer-2');
 const layer_3 = document.querySelector('#layer-3');
@@ -7,29 +8,13 @@ const layer_5 = document.querySelector('#layer-5');
 let ClientWidth  = document.documentElement.clientWidth;
 let ClientHeight = document.documentElement.clientHeight;
 
-layer_4.style.width  = `${ ClientWidth  }px`;
-layer_4.style.height = `${ ClientHeight }px`;
+layer_4.style.width  = `${ ClientWidth*2  }px`;
+layer_4.style.height = `${ ClientHeight*2 }px`;
 
-layer_5.style.width  = `${ ClientWidth  }px`;
-layer_5.style.height = `${ ClientHeight }px`;
+layer_background.style.width  = `${ ClientWidth  }px`;
+layer_background.style.height = `${ ClientHeight }px`;
 
-if (window.innerWidth < 768){
-    window.addEventListener('deviceorientation', function(event) {
-        AxisX(arr[0],35,event.gamma);
-        AxisX(arr[1],15,event.gamma);
-        AxisX(arr[2],65,event.gamma);
-    
-        AxisY(arr[0],35,event.beta);
-        AxisY(arr[1],15,event.beta);
-        AxisY(arr[2],65,event.beta);
-    });
-    
-    layer_1.style.left = (window.innerWidth/2 - parseInt(getComputedStyle(layer_1).width)/2 ) + 'px';
-    layer_2.style.left = (window.innerWidth/2 - parseInt(getComputedStyle(layer_2).width)/2 ) + 'px';
-    layer_3.style.left = (window.innerWidth/2 - parseInt(getComputedStyle(layer_3).width)/2 ) + 'px';
-}
-
-let arr = [[],[],[],[]];
+let arr = [[],[],[],[],[]];
 arr[0][0] = layer_1;
 arr[0][1] =  parseInt(getComputedStyle(layer_1).left);
 arr[0][2] =  parseInt(getComputedStyle(layer_1).top);
@@ -45,6 +30,10 @@ arr[2][2] =  parseInt(getComputedStyle(layer_3).top);
 arr[3][0] = layer_4;
 arr[3][1] =  parseInt(getComputedStyle(layer_4).left);
 arr[3][2] =  parseInt(getComputedStyle(layer_4).top);
+
+arr[4][0] = layer_5;
+arr[4][1] =  parseInt(getComputedStyle(layer_5).left);
+arr[4][2] =  parseInt(getComputedStyle(layer_5).top);
 
 function axisX(arr,px,position){
     let ratePosition = ClientWidth/100/2;
@@ -93,15 +82,31 @@ function AxisY(arr,px,position){
 
 
 function mouse(event){
-     axisX(arr[0],10,event.clientX);
-     axisX(arr[1],30,event.clientX);
+     axisX(arr[0],20,event.clientX);
+     axisX(arr[1],5,event.clientX);
      axisX(arr[2],50,event.clientX);
      axisX(arr[3],85,event.clientX);
     
-     axisY(arr[0],10,event.clientY);
-     axisY(arr[1],30,event.clientY);
-     axisY(arr[2],50,event.clientY);
+     axisY(arr[0],20,event.clientY);
+     axisY(arr[1],5,event.clientY);
+     axisY(arr[2],40,event.clientY);
      axisY(arr[3],85,event.clientY);
+}
+
+if (window.innerWidth < 768){
+    window.addEventListener('deviceorientation', function(event) {
+        AxisX(arr[0],35,event.gamma);
+        AxisX(arr[1],15,event.gamma);
+        AxisX(arr[4],100,event.gamma);
+        AxisX(arr[3],100,event.gamma);
+        AxisX(arr[2],100,event.beta);
+    
+        AxisY(arr[0],35,event.beta);
+        AxisY(arr[1],15,event.beta);
+        //AxisY(arr[2],45,event.beta);
+        AxisY(arr[3],100,event.beta);
+        AxisY(arr[4],100,event.beta);
+    });
 }
 
 

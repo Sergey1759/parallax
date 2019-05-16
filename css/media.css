@@ -6,15 +6,15 @@
     background-repeat: no-repeat;
 }
 #layer-1{
-    background-image: url(../image/Earth.gif);
+    background-image: url(../image/earth.png);
     width: 130px;
     height: 130px;
-    left: 23%;
-    top: 23%;
+    left: 13%;
+    top: 13%;
     z-index: 4;
 }
 #layer-2{
-    background-image: url(../image/moon.gif);
+    background-image: url(../image/moon.png);
     width: 40px;
     height: 40px;
     left: 40%;
@@ -22,17 +22,40 @@
     z-index: 3;
 }
 #layer-3{
-    background-image: url(../image/sun.gif);
+    background-image: url(../image/sun.png);
     width: 230px;
     height: 230px;
-    left: 17%;
-    top: 51%;
-    z-index: 2;
+    left: -40%;
+    top: 45%;
+    z-index: 6;
+    position: fixed;
 }
 #layer-4{
+    background-image: url(../image/space1.png);
+    left: -100px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    position: fixed;
+    background-position: center;
+}
+#layer-5{
+    background-image: url(../image/space2.png);
+    width: 400px;
+    height: 400px;
+    left: 22%;
+    top: 18%;
+    z-index: 2;
+    background-repeat: no-repeat;
+}
+#layer-background{
     background-image: url(../image/space.png);
+    position: fixed;
     left: 0;
     top: 0;
+    width: 100%;
+    height: 100%;
     z-index: 1;
 }
 }
