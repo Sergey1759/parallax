@@ -55,15 +55,47 @@ function axisY(arr,px,position){
     } 
 }
 
+function AxisX(arr,px,position){   
+    if(position > 0 && position < 60){
+        let rate = ((position * 100)/60);
+        arr[0].style.left = (arr[1]-(px*(rate/100)))+'px';
+    } else if(position < 0 && position > -60){
+        position *= -1;
+        let rate =((position * 100)/60);
+        arr[0].style.left = (arr[1]+(px*(rate/100))) + 'px';
+    } 
+}
+function AxisY(arr,px,position){   
+    if(position > 0 && position < 60){
+        let rate = ((position * 100)/60);
+        arr[0].style.top = (arr[2]-(px*(rate/100)))+'px';
+    } else if(position < 0 && position > -60){
+        position *= -1;
+        let rate =((position * 100)/60);
+        arr[0].style.top = (arr[2]+(px*(rate/100))) + 'px';
+    } 
+}
+
+
 function mouse(event){
      axisX(arr[0],10,event.clientX);
-     axisX(arr[1],20,event.clientX);
-     axisX(arr[2],40,event.clientX);
+     axisX(arr[1],30,event.clientX);
+     axisX(arr[2],50,event.clientX);
      axisX(arr[3],85,event.clientX);
     
      axisY(arr[0],10,event.clientY);
-     axisY(arr[1],20,event.clientY);
-     axisY(arr[2],40,event.clientY);
+     axisY(arr[1],30,event.clientY);
+     axisY(arr[2],50,event.clientY);
      axisY(arr[3],85,event.clientY);
 }
+
+window.addEventListener('deviceorientation', function(event) {
+    AxisX(arr[0],25,event.gamma);
+    AxisX(arr[1],5,event.gamma);
+    AxisX(arr[2],65,event.gamma);
+    
+    AxisY(arr[0],25,event.beta);
+    AxisY(arr[1],5,event.beta);
+    AxisY(arr[2],65,event.beta);
+});
    
