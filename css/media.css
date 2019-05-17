@@ -1,6 +1,6 @@
 @media screen and (max-width: 768px) {
-    #layer-1 , #layer-2 , #layer-3 , #layer-4{
-    position: absolute;
+    #layer-1 , #layer-2 , #layer-3 , #layer-4 ,  #layer-5{
+    position: fixed;
     display: block;
     background-size: cover;
     background-repeat: no-repeat;
@@ -9,15 +9,15 @@
     background-image: url(../image/earth.png);
     width: 130px;
     height: 130px;
-    left: 13%;
-    top: 13%;
-    z-index: 4;
+    left: 7%;
+    top: 9%;
+    z-index: 8;
 }
 #layer-2{
     background-image: url(../image/moon.png);
     width: 40px;
     height: 40px;
-    left: 40%;
+    left: 35%;
     top: 7%;
     z-index: 3;
 }
@@ -27,26 +27,43 @@
     height: 230px;
     left: -40%;
     top: 45%;
-    z-index: 6;
+    z-index: 20;
     position: fixed;
 }
 #layer-4{
     background-image: url(../image/space1.png);
-    left: -100px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
+    left: -150px;
+    top: 120px;
+    width: 800px;
+    height: 800px;
     z-index: 5;
+    background-size: 100%;
     position: fixed;
     background-position: center;
 }
 #layer-5{
     background-image: url(../image/space2.png);
-    width: 400px;
-    height: 400px;
-    left: 22%;
-    top: 18%;
-    z-index: 2;
+    width: 700px;
+    height: 700px;
+    left: -200px;
+    top: -75px;
+    z-index: 7;
+    position: fixed;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+}
+#layer-6{
+    background-image: url(../image/space6.png);
+    width: 250%;
+    height: 250%;
+    position: fixed;
+    left: -25%;
+    top: -25%;
+    z-index: 5;
+    background-position: center;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 #layer-background{

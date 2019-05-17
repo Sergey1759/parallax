@@ -1,3 +1,4 @@
+@media screen and (min-width: 768px) {
 #layer-1 , #layer-2 , #layer-3 , #layer-4 , #layer-5{
     position: absolute;
     display: block;
@@ -117,4 +118,5 @@ body {
     margin: 0px;
     padding: 0px;
     overflow: hidden;
+}
 }

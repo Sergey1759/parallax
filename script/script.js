@@ -1,3 +1,4 @@
+if(window.innerWidth > 768){
 const layer_background = document.querySelector('#layer-background');
 const layer_1 = document.querySelector('#layer-1');
 const layer_2 = document.querySelector('#layer-2');
@@ -13,16 +14,10 @@ const layer_9 = document.querySelector('#layer-9');
 let ClientWidth  = document.documentElement.clientWidth;
 let ClientHeight = document.documentElement.clientHeight;
 
-if (window.innerWidth < 768){
-layer_4.style.width  = `${ ClientWidth*2  }px`;
-layer_4.style.height = `${ ClientHeight*2 }px`;
-    
-layer_background.style.width  = `${ ClientWidth  }px`;
-layer_background.style.height = `${ ClientHeight }px`;
-}
-
 layer_background.style.width  = `${ ClientWidth * 3 }px`;
 layer_background.style.height = `${ ClientHeight * 3}px`;
+
+
 
 let arr = [[],[],[],[],[],[],[],[],[],[]];
 arr[0][0] = layer_1;
@@ -89,28 +84,6 @@ function axisY(arr,px,position){
     } 
 }
 
-function AxisX(arr,px,position){   
-    if(position > 0 && position < 60){
-        let rate = ((position * 100)/60);
-        arr[0].style.left = (arr[1]-(px*(rate/100)))+'px';
-    } else if(position < 0 && position > -60){
-        position *= -1;
-        let rate =((position * 100)/60);
-        arr[0].style.left = (arr[1]+(px*(rate/100))) + 'px';
-    } 
-}
-function AxisY(arr,px,position){   
-    if(position > 0 && position < 60){
-        let rate = ((position * 100)/60);
-        arr[0].style.top = (arr[2]-(px*(rate/100)))+'px';
-    } else if(position < 0 && position > -60){
-        position *= -1;
-        let rate =((position * 100)/60);
-        arr[0].style.top = (arr[2]+(px*(rate/100))) + 'px';
-    } 
-}
-
-
 function mouse(event){
      axisX(arr[4],700,event.clientX);
      axisX(arr[0],500,event.clientX);
@@ -134,22 +107,8 @@ function mouse(event){
      axisY(arr[8],500,event.clientY);
      axisY(arr[9],500,event.clientY);
 }
-
-if (window.innerWidth < 768){
-    window.addEventListener('deviceorientation', function(event) {
-        AxisX(arr[0],35,event.gamma);
-        AxisX(arr[1],15,event.gamma);
-        AxisX(arr[4],100,event.gamma);
-        AxisX(arr[3],100,event.gamma);
-        AxisX(arr[2],100,event.beta);
-    
-        AxisY(arr[0],35,event.beta);
-        AxisY(arr[1],15,event.beta);
-        //AxisY(arr[2],45,event.beta);
-        AxisY(arr[3],100,event.beta);
-        AxisY(arr[4],100,event.beta);
-    });
 }
+
 
 
 
