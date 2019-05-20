@@ -85,7 +85,7 @@
 #layer-8{
     background-image: url(../image/comet.png);
     position: fixed;
-    left: 50%;
+    left: 100%;
     top: -90%;
     width: 500px;
     height: 500px;
